@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PlayerVC: UIViewController {
     
@@ -24,10 +25,8 @@ class PlayerVC: UIViewController {
         vmParse()
         playerTableView.delegate = self
         playerTableView.dataSource = self
+        playerTableView.register(UINib.init(nibName: PlayerCell.identifier, bundle: nil), forCellReuseIdentifier: PlayerCell.identifier)
         // Do any additional setup after loading the view.
-        if item.count == 0 {
-            self.showAlert(AlertTitle: "Error", AlertMessage: "Players count is equal zero from Api")
-        }
     }
 
 }
@@ -40,8 +39,14 @@ extension PlayerVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = item[indexPath.row].firstname
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlayerCell.identifier, for: indexPath) as! PlayerCell
+        if item[indexPath.row].img == "" {
+            cell.imageVİew.image = UIImage(systemName: "figure.soccer")
+        }else {
+            cell.imageVİew.sd_setImage(with: URL(string: item[indexPath.row].img))
+        }
+        cell.firstNameLabel.text = item[indexPath.row].firstname
+        cell.secondNameLabel.text = item[indexPath.row].lastname.uppercased()
         return cell
     }
     
@@ -71,6 +76,9 @@ extension PlayerVC {
         vm.parse(countryId: countryId, minAge: 19) { data,error in
             if error == nil {
                 self.item = data ?? self.item
+                if self.item.count == 0 {
+                    self.showAlert(AlertTitle: "Error", AlertMessage: "Players count is equal zero from Api")
+                }
                 DispatchQueue.main.async {
                     self.playerTableView.reloadData()
                 }

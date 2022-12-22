@@ -30,6 +30,8 @@
 		4C97352B2953EA2C00A01B24 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97352A2953EA2C00A01B24 /* PlayerVC.swift */; };
 		4C97352D2953EB2300A01B24 /* PlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97352C2953EB2300A01B24 /* PlayerVM.swift */; };
 		4C97352F2953EBED00A01B24 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97352E2953EBEC00A01B24 /* Player.swift */; };
+		4C97353329549CC800A01B24 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97353129549CC800A01B24 /* PlayerCell.swift */; };
+		4C97353429549CC800A01B24 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C97353229549CC800A01B24 /* PlayerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		4C97352A2953EA2C00A01B24 /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		4C97352C2953EB2300A01B24 /* PlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVM.swift; sourceTree = "<group>"; };
 		4C97352E2953EBEC00A01B24 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4C97353129549CC800A01B24 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		4C97353229549CC800A01B24 /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,10 +209,20 @@
 		4C973524295386F500A01B24 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				4C97353029549CAB00A01B24 /* PlayerCell */,
 				4C97352A2953EA2C00A01B24 /* PlayerVC.swift */,
 				4C97352C2953EB2300A01B24 /* PlayerVM.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		4C97353029549CAB00A01B24 /* PlayerCell */ = {
+			isa = PBXGroup;
+			children = (
+				4C97353129549CC800A01B24 /* PlayerCell.swift */,
+				4C97353229549CC800A01B24 /* PlayerCell.xib */,
+			);
+			path = PlayerCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C97353429549CC800A01B24 /* PlayerCell.xib in Resources */,
 				4C9734EC294BD49C00A01B24 /* LaunchScreen.storyboard in Resources */,
 				4C9734E9294BD49C00A01B24 /* Assets.xcassets in Resources */,
 				4C9734E4294BD49A00A01B24 /* Main.storyboard in Resources */,
@@ -303,6 +318,7 @@
 				4C97352D2953EB2300A01B24 /* PlayerVM.swift in Sources */,
 				4C97352B2953EA2C00A01B24 /* PlayerVC.swift in Sources */,
 				4C973514294E117400A01B24 /* Country.swift in Sources */,
+				4C97353329549CC800A01B24 /* PlayerCell.swift in Sources */,
 				4C9735232950F10500A01B24 /* LeagueMenuVC.swift in Sources */,
 				4C97351D294FE50B00A01B24 /* League.swift in Sources */,
 				4C9735212950F0F600A01B24 /* LeagueMenuVM.swift in Sources */,
