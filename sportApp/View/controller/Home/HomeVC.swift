@@ -27,6 +27,7 @@ class HomeVC: UIViewController {
         vmParse()
         tableView.delegate = self
         tableView.dataSource = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Players", style: .plain, target: self, action: #selector(toPlayerVC))
        
         // Do any additional setup after loading the view.
     }
@@ -78,6 +79,12 @@ extension HomeVC {
         print("stop")
         activityIndicator.stopAnimating()
         activityIndicator.hidesWhenStopped = true
+    }
+    
+    @objc func toPlayerVC(){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "player") as? PlayerVC
+        vc?.countryId = self.selectedCountryId
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 
 

@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O12-H8-pWF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841.9847328244275" y="685.91549295774655"/>
+            <point key="canvasLocation" x="3033" y="720"/>
         </scene>
         <!--Country MenuVC-->
         <scene sceneID="6F1-H3-09S">
@@ -178,7 +178,57 @@
             </objects>
             <point key="canvasLocation" x="1842" y="-727"/>
         </scene>
-        <!--HomeVC-->
+        <!--PlayerVC-->
+        <scene sceneID="Jww-53-86T">
+            <objects>
+                <viewController storyboardIdentifier="player" id="gcR-fW-wJx" customClass="PlayerVC" customModule="sportApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9py-V6-oiy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aas-C9-rlM">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hDa-Pw-LUV">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hDa-Pw-LUV" id="5aU-zd-dnp">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="18b-5o-2NQ">
+                                <rect key="frame" x="146.66666666666666" y="388.66666666666669" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="BwJ-NU-TlZ"/>
+                                    <constraint firstAttribute="height" constant="100" id="RP7-Ds-wHC"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="goq-o5-VjA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aas-C9-rlM" firstAttribute="leading" secondItem="goq-o5-VjA" secondAttribute="leading" id="ELN-Ho-CWj"/>
+                            <constraint firstItem="goq-o5-VjA" firstAttribute="bottom" secondItem="aas-C9-rlM" secondAttribute="bottom" id="N12-NN-onX"/>
+                            <constraint firstItem="aas-C9-rlM" firstAttribute="top" secondItem="goq-o5-VjA" secondAttribute="top" id="Nm1-li-lIZ"/>
+                            <constraint firstItem="18b-5o-2NQ" firstAttribute="centerX" secondItem="goq-o5-VjA" secondAttribute="centerX" id="OGa-k9-GPF"/>
+                            <constraint firstItem="18b-5o-2NQ" firstAttribute="centerY" secondItem="goq-o5-VjA" secondAttribute="centerY" id="Tgs-ND-F2s"/>
+                            <constraint firstItem="goq-o5-VjA" firstAttribute="trailing" secondItem="aas-C9-rlM" secondAttribute="trailing" id="jgA-vp-e9B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="18b-5o-2NQ" id="zg4-nh-hkv"/>
+                        <outlet property="playerTableView" destination="aas-C9-rlM" id="pSg-7r-Geq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42l-pE-vYs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3033" y="-727"/>
+        </scene>
+        <!--Team-->
         <scene sceneID="Aev-0j-uZz">
             <objects>
                 <viewController storyboardIdentifier="home" id="liZ-Cx-GsQ" customClass="HomeVC" customModule="sportApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,6 +269,7 @@
                             <constraint firstItem="Fol-bp-B7x" firstAttribute="bottom" secondItem="A0B-h2-2mk" secondAttribute="bottom" id="sIc-bn-xyR"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Team" image="t.circle.fill" catalog="system" id="2Gn-FW-dl7"/>
                     <connections>
                         <outlet property="activityIndicator" destination="PHG-aI-MgT" id="yTy-1v-OVE"/>
                         <outlet property="tableView" destination="A0B-h2-2mk" id="v1X-ur-Rt5"/>
@@ -226,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFC-pW-scu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2799" y="-27"/>
+            <point key="canvasLocation" x="3034" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jLT-Oh-X7b">
@@ -248,6 +299,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="t.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
