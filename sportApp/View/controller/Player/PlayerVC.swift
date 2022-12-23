@@ -50,6 +50,17 @@ extension PlayerVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "playerDetail") as? PlayerDetailVC
+        vc?.detail = item[indexPath.row]
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetailVC
+//        vc?.tableId = item[indexPath.row].id ?? 1
+//        vc?.imageUrl = item[indexPath.row].image ?? ""
+//        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     
 }
 

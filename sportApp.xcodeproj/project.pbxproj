@@ -32,6 +32,7 @@
 		4C97352F2953EBED00A01B24 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97352E2953EBEC00A01B24 /* Player.swift */; };
 		4C97353329549CC800A01B24 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97353129549CC800A01B24 /* PlayerCell.swift */; };
 		4C97353429549CC800A01B24 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C97353229549CC800A01B24 /* PlayerCell.xib */; };
+		4C973536295510AD00A01B24 /* PlayerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C973535295510AD00A01B24 /* PlayerDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		4C97352E2953EBEC00A01B24 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4C97353129549CC800A01B24 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		4C97353229549CC800A01B24 /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
+		4C973535295510AD00A01B24 /* PlayerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				4C97353029549CAB00A01B24 /* PlayerCell */,
 				4C97352A2953EA2C00A01B24 /* PlayerVC.swift */,
 				4C97352C2953EB2300A01B24 /* PlayerVM.swift */,
+				4C973535295510AD00A01B24 /* PlayerDetailVC.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				4C973514294E117400A01B24 /* Country.swift in Sources */,
 				4C97353329549CC800A01B24 /* PlayerCell.swift in Sources */,
 				4C9735232950F10500A01B24 /* LeagueMenuVC.swift in Sources */,
+				4C973536295510AD00A01B24 /* PlayerDetailVC.swift in Sources */,
 				4C97351D294FE50B00A01B24 /* League.swift in Sources */,
 				4C9735212950F0F600A01B24 /* LeagueMenuVM.swift in Sources */,
 				4C97352F2953EBED00A01B24 /* Player.swift in Sources */,
