@@ -26,6 +26,7 @@ class PlayerVC: UIViewController {
         playerTableView.delegate = self
         playerTableView.dataSource = self
         playerTableView.register(UINib.init(nibName: PlayerCell.identifier, bundle: nil), forCellReuseIdentifier: PlayerCell.identifier)
+        infoButton()
         // Do any additional setup after loading the view.
     }
 
@@ -54,11 +55,6 @@ extension PlayerVC: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "playerDetail") as? PlayerDetailVC
         vc?.detail = item[indexPath.row]
         self.navigationController?.pushViewController(vc!, animated: true)
-        
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetailVC
-//        vc?.tableId = item[indexPath.row].id ?? 1
-//        vc?.imageUrl = item[indexPath.row].image ?? ""
-//        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
@@ -114,9 +110,19 @@ extension PlayerVC {
     private func showAlert(AlertTitle:String,AlertMessage:String) {
         let alert = UIAlertController(title: AlertTitle, message: AlertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
-            
+            print("ok")
         }))
         present(alert, animated: true)
     }
     
+    func infoButton(){
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.addTarget(self, action: #selector(self.infoButtonClicked), for: .touchUpInside)
+        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
+        navigationItem.rightBarButtonItem = infoBarButtonItem
+    }
+    
+    @objc func infoButtonClicked(){
+        showAlert(AlertTitle: "Age", AlertMessage: "Players age > 18")
+    }
 }
