@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Network
 
 class SplashVC: UIViewController {
+    
+    var isConnected : Bool = false
     
     private let imageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
@@ -18,6 +21,7 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
+        monitorNetwork()
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,7 +34,8 @@ class SplashVC: UIViewController {
     }
     
     private func animate() {
-        UIView.animate(withDuration: 1.5) {
+        if isConnected == true {
+            UIView.animate(withDuration: 1.5) {
                 let size = self.view.frame.size.width * 3
                 let diffX = size - self.view.frame.size.width
                 let diffY = self.view.frame.size.height - size
@@ -57,7 +62,41 @@ class SplashVC: UIViewController {
                 }
             }
         }
+    }
+}
 
+extension SplashVC {
+    
+    //MARK: -NETWORK CONTROL
+    func monitorNetwork() {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue.global()
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                print("internet connected")
+                self.isConnected = true
+            }else {
+                DispatchQueue.main.async {
+                    self.callAlert(title: "Internet", message: "Internet not connected")
+                }
+            }
+        }
+        monitor.start(queue: queue)
+    }
 
+    //MARK: - ALERT
+    func callAlert(title:String,message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (alert: UIAlertAction!) in
+            self.monitorNetwork()
+            if self.isConnected == true {
+                print("başarılı")
+                self.animate()
+            }
+        }
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
+    
 }
 
