@@ -47,6 +47,7 @@ class OnboardingVC: UIViewController {
 
     @IBAction func nextBtnClicked(_ sender: Any) {
         if currentPage == slides.count - 1 {
+            UserDefaults.standard.set(true, forKey: "openApp")
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "homeNC") as! UINavigationController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
@@ -57,9 +58,6 @@ class OnboardingVC: UIViewController {
 //            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
-    
-    
-    
 }
 
 
