@@ -22,8 +22,10 @@ class OnboardingVC: UIViewController {
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
+                nextBtn.layer.opacity = 1
                 nextBtn.setTitle("Get Started", for: .normal)
             }else {
+                nextBtn.layer.opacity = 0.5
                 nextBtn.setTitle("Next", for: .normal)
             }
         }
@@ -33,6 +35,7 @@ class OnboardingVC: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        nextBtn.layer.opacity = 0.5
         slides = [
             OnboardingSlide(title: "Avrupa Ülkeleri", description: "Avrupa ülkeleri listenelenir ve seçilir.", image:UIImage(named: "ball")!),
             OnboardingSlide(title: "Ülkelerin Ligleri", description: "Ülkelerin sahip oldugu ligler sıralanır.", image:UIImage(named: "ball")!),
@@ -44,17 +47,15 @@ class OnboardingVC: UIViewController {
 
     @IBAction func nextBtnClicked(_ sender: Any) {
         if currentPage == slides.count - 1 {
-            nextBtn.isEnabled = true
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "homeNC") as! UINavigationController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             self.present(controller, animated: true, completion: nil)
         }else {
-            //currentPage += 1
-            //let indexPath = IndexPath(item: currentPage, section: 0)
-            //collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+//            currentPage += 1
+//            let indexPath = IndexPath(item: currentPage, section: 0)
+//            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
-        
     }
     
     
@@ -80,6 +81,6 @@ extension OnboardingVC: UICollectionViewDelegate,UICollectionViewDataSource,UICo
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         currentPage = Int(scrollView.contentOffset.x / width)
-        pageControl.currentPage = currentPage
+        //pageControl.currentPage = currentPage
     }
 }
