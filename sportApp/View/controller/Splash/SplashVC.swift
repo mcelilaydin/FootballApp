@@ -13,7 +13,7 @@ class SplashVC: UIViewController {
     var isConnected : Bool = false
     
     private let imageView: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         imageView.image = UIImage(named: "ball")
         return imageView
     }()
