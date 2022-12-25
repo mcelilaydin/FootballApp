@@ -37,7 +37,7 @@ class OnboardingVC: UIViewController {
         collectionView.dataSource = self
         nextBtn.layer.opacity = 0.5
         slides = [
-            OnboardingSlide(title: "Avrupa Ülkeleri", description: "Avrupa ülkeleri listenelenir ve seçilir.", image:UIImage(named: "ball")!),
+            OnboardingSlide(title: "Avrupa Ülkeleri", description: "Avrupa ülkeleri listenelenir ve seçilir.", image:UIImage(named: "earth")!),
             OnboardingSlide(title: "Ülkelerin Ligleri", description: "Ülkelerin sahip oldugu ligler sıralanır.", image:UIImage(named: "ball")!),
             OnboardingSlide(title: "Ülkelin Yerli Oyuncuları ", description: "Ülkelerin yerli oyuncuları sıralanır ve detayları verilir", image:UIImage(named: "ball")!)
         ]
@@ -48,10 +48,8 @@ class OnboardingVC: UIViewController {
     @IBAction func nextBtnClicked(_ sender: Any) {
         if currentPage == slides.count - 1 {
             UserDefaults.standard.set(true, forKey: "openApp")
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "homeNC") as! UINavigationController
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .flipHorizontal
-            self.present(controller, animated: true, completion: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "country") as? CountryVC
+            self.navigationController?.pushViewController(vc!, animated: true)
         }else {
 //            currentPage += 1
 //            let indexPath = IndexPath(item: currentPage, section: 0)

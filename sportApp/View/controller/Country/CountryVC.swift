@@ -40,10 +40,6 @@ extension CountryVC {
     //MARK: - SET BUTTON
     
     func setButtonAtt(){
-        countryButton.layer.masksToBounds = true
-        countryButton.layer.cornerRadius = countryButton.frame.height/2
-        countryButton.layer.borderWidth = 1
-        countryButton.layer.borderColor = UIColor.red.cgColor
         countryButton.setTitle(countryButtonTitle, for: .normal)
     }
     

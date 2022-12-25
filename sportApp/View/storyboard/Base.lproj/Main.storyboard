@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdI-eR-8Yj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-384" y="-51"/>
+            <point key="canvasLocation" x="1802" y="-51"/>
         </scene>
         <!--OnboardingVC-->
         <scene sceneID="lFm-mw-2oS">
@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYE-On-1jv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544" y="-51"/>
+            <point key="canvasLocation" x="2731" y="-51"/>
         </scene>
         <!--CountryVC-->
         <scene sceneID="biU-zo-MZy">
@@ -147,43 +147,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQm-yo-U9r">
-                                <rect key="frame" x="85" y="314" width="223" height="163"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="def-y9-ZIo">
+                                <rect key="frame" x="121.66666666666669" y="618" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65297429295104792" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="6D4-Jn-ZXT"/>
+                                    <constraint firstAttribute="height" constant="50" id="YnR-2J-ffm"/>
+                                    <constraint firstAttribute="width" constant="150" id="hJZ-ld-Ffd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
+                                <state key="normal" title="Devam">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueClicked:" destination="rJR-WZ-5tM" eventType="touchUpInside" id="ZJe-VL-hIq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQm-yo-U9r">
+                                <rect key="frame" x="16" y="168" width="361" height="400"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="earth">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="countryButtonClicked:" destination="rJR-WZ-5tM" eventType="touchUpInside" id="NYj-Up-sy2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="def-y9-ZIo">
-                                <rect key="frame" x="85" y="548" width="223" height="35"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="foF-dq-Wfh"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Devam"/>
-                                <connections>
-                                    <action selector="continueClicked:" destination="rJR-WZ-5tM" eventType="touchUpInside" id="ZJe-VL-hIq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pav-Ee-bgr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bQm-yo-U9r" firstAttribute="leading" secondItem="Pav-Ee-bgr" secondAttribute="leading" constant="85" id="88h-9E-VqG"/>
-                            <constraint firstItem="Pav-Ee-bgr" firstAttribute="bottom" secondItem="def-y9-ZIo" secondAttribute="bottom" constant="235" id="Sya-5P-cqZ"/>
-                            <constraint firstItem="bQm-yo-U9r" firstAttribute="top" secondItem="Pav-Ee-bgr" secondAttribute="top" constant="211" id="WTj-sb-WE1"/>
-                            <constraint firstItem="def-y9-ZIo" firstAttribute="leading" secondItem="bQm-yo-U9r" secondAttribute="leading" id="Yzt-Dd-tcn"/>
-                            <constraint firstItem="def-y9-ZIo" firstAttribute="trailing" secondItem="bQm-yo-U9r" secondAttribute="trailing" id="j17-SW-rve"/>
-                            <constraint firstItem="Pav-Ee-bgr" firstAttribute="trailing" secondItem="bQm-yo-U9r" secondAttribute="trailing" constant="85" id="jsO-PR-yXs"/>
+                            <constraint firstItem="Pav-Ee-bgr" firstAttribute="bottom" secondItem="def-y9-ZIo" secondAttribute="bottom" constant="150" id="hBV-5C-fth"/>
+                            <constraint firstItem="def-y9-ZIo" firstAttribute="centerX" secondItem="Pav-Ee-bgr" secondAttribute="centerX" id="nIw-1U-h6I"/>
+                            <constraint firstItem="Pav-Ee-bgr" firstAttribute="trailing" secondItem="bQm-yo-U9r" secondAttribute="trailing" constant="16" id="rQ5-wP-lHh"/>
+                            <constraint firstItem="bQm-yo-U9r" firstAttribute="leading" secondItem="Pav-Ee-bgr" secondAttribute="leading" constant="16" id="rxf-dq-mQA"/>
+                            <constraint firstItem="def-y9-ZIo" firstAttribute="top" secondItem="bQm-yo-U9r" secondAttribute="bottom" constant="50" id="ty1-2j-Ext"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e98-4V-sdA"/>
@@ -193,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRg-7M-QO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2795" y="-51"/>
+            <point key="canvasLocation" x="3985" y="-51"/>
         </scene>
         <!--League MenuVC-->
         <scene sceneID="GzY-2a-1Tk">
@@ -292,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cd-Sy-p36" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2795" y="-751"/>
+            <point key="canvasLocation" x="2731" y="-751"/>
         </scene>
         <!--PlayerVC-->
         <scene sceneID="Jww-53-86T">
@@ -393,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFC-pW-scu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4912.2137404580153" y="-51.408450704225352"/>
+            <point key="canvasLocation" x="5838.9312977099235" y="-51.408450704225352"/>
         </scene>
         <!--Player DetailVC-->
         <scene sceneID="N1n-S4-151">
@@ -541,25 +544,26 @@
             <point key="canvasLocation" x="5103" y="-751"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="2qQ-wV-ClD">
+        <scene sceneID="PVp-BG-5LY">
             <objects>
-                <navigationController storyboardIdentifier="homeNC" automaticallyAdjustsScrollViewInsets="NO" id="Dp8-Hs-GMm" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xdI-eR-8Yj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G9P-mc-Tla">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HKe-Zg-DHc">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rJR-WZ-5tM" kind="relationship" relationship="rootViewController" id="Qya-Am-GLL"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qms-wl-fbz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LdO-WI-l2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4R4-V8-3z8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-51"/>
+            <point key="canvasLocation" x="876" y="-51"/>
         </scene>
     </scenes>
     <resources>
+        <image name="earth" width="400" height="400"/>
         <image name="t.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

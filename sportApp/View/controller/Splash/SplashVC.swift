@@ -49,15 +49,11 @@ class SplashVC: UIViewController {
             } completion: { done in
                 if done {
                     if (UserDefaults.standard.bool(forKey: "openApp") == true) {
-                        let controller = self.storyboard?.instantiateViewController(withIdentifier: "country") as! CountryVC
-                        controller.modalPresentationStyle = .fullScreen
-                        controller.modalTransitionStyle = .partialCurl
-                        self.present(controller, animated: true,completion: nil)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "country") as? CountryVC
+                        self.navigationController?.pushViewController(vc!, animated: true)
                     }else {
-                        let controller = self.storyboard?.instantiateViewController(withIdentifier: "onboarding") as! OnboardingVC
-                        controller.modalPresentationStyle = .fullScreen
-                        controller.modalTransitionStyle = .partialCurl
-                        self.present(controller, animated: true, completion: nil)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "onboarding") as? OnboardingVC
+                        self.navigationController?.pushViewController(vc!, animated: true)
                     }
                 }
             }
