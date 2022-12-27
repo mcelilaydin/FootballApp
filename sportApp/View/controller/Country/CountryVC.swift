@@ -29,10 +29,14 @@ class CountryVC: UIViewController {
     }
     
     @IBAction func continueClicked(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeVC
-        vc?.selectedCountryId = countryId ?? 0
-        vc?.countryName = countryButtonTitle
-        self.navigationController?.pushViewController(vc!, animated: true)
+        if countryButtonTitle == "Country Name" {
+            DuplicateFuncs.alertMessage(title: "Error", message: "Please Select Country", vc: self)
+        }else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeVC
+            vc?.selectedCountryId = countryId ?? 0
+            vc?.countryName = countryButtonTitle
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
 }
 
@@ -41,16 +45,6 @@ extension CountryVC {
     
     func setButtonAtt(){
         countryButton.setTitle(countryButtonTitle, for: .normal)
-    }
-    
-    //MARK: - ALERT
-    
-    private func showAlert(AlertTitle:String,AlertMessage:String) {
-        let alert = UIAlertController(title: AlertTitle, message: AlertMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
-            print("click")
-        }))
-        present(alert, animated: true)
     }
     
 }

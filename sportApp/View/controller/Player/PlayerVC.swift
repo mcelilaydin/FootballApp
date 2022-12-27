@@ -84,7 +84,7 @@ extension PlayerVC {
             if error == nil {
                 self.item = data ?? self.item
                 if self.item.count == 0 {
-                    self.showAlert(AlertTitle: "Error", AlertMessage: "Players count is equal zero from Api")
+                    DuplicateFuncs.alertMessage(title: "Error", message: "The number of players in Api is zero.", vc: self)
                 }
                 DispatchQueue.main.async {
                     self.playerTableView.reloadData()
@@ -107,14 +107,6 @@ extension PlayerVC {
 //MARK: -HELPER
 extension PlayerVC {
     
-    private func showAlert(AlertTitle:String,AlertMessage:String) {
-        let alert = UIAlertController(title: AlertTitle, message: AlertMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
-            print("ok")
-        }))
-        present(alert, animated: true)
-    }
-    
     func infoButton(){
         let infoButton = UIButton(type: .infoLight)
         infoButton.addTarget(self, action: #selector(self.infoButtonClicked), for: .touchUpInside)
@@ -123,6 +115,6 @@ extension PlayerVC {
     }
     
     @objc func infoButtonClicked(){
-        showAlert(AlertTitle: "Age", AlertMessage: "Players age > 18")
+        DuplicateFuncs.alertMessage(title: "Age", message: "Players age > 18", vc: self)
     }
 }
