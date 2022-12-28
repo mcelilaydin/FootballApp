@@ -32,10 +32,15 @@ class CountryVC: UIViewController {
         if countryButtonTitle == "Country Name" {
             DuplicateFuncs.alertMessage(title: "Error", message: "Please Select Country", vc: self)
         }else {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeVC
-            vc?.selectedCountryId = countryId ?? 0
-            vc?.countryName = countryButtonTitle
-            self.navigationController?.pushViewController(vc!, animated: true)
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeVC
+//            vc?.selectedCountryId = countryId ?? 0
+//            vc?.countryName = countryButtonTitle
+//            self.navigationController?.pushViewController(vc!, animated: true)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "list") as? ListVC
+                        vc?.selectedCountryId = countryId ?? 0
+                        vc?.countryName = countryButtonTitle
+                        self.navigationController?.pushViewController(vc!, animated: true)
+            
         }
     }
 }
