@@ -63,7 +63,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PlayerCell.identifier, for: indexPath) as! PlayerCell
         if showPlayer == false {
             if itemTeam[indexPath.row].logo == "" {
-                cell.imageVİew.image = UIImage(systemName: "person.3.sequence.fill")
+                cell.imageVİew.image = UIImage(systemName: "person.3.sequence.fill")?.withTintColor(.black)
             }else {
                 cell.imageVİew.sd_setImage(with: URL(string: itemTeam[indexPath.row].logo))
             }
@@ -79,6 +79,14 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
             cell.secondNameLabel.text = itemPlayer[indexPath.row].lastname.uppercased()
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if showPlayer == true {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "playervc") as? PlayerVC
+            vc?.item = itemPlayer[indexPath.row]
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
 }
 
