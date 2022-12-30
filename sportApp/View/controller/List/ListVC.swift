@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import PanModal
 
 class ListVC: UIViewController {
 
@@ -29,6 +30,7 @@ class ListVC: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         vmTeamParse()
+        setRightbarButton()
 
         // Do any additional setup after loading the view.
     }
@@ -37,10 +39,12 @@ class ListVC: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             activityIndicatorStart()
+            navigationItem.rightBarButtonItem?.isHidden = true
             showPlayer = false
             vmTeamParse()
         case 1:
             activityIndicatorStart()
+            navigationItem.rightBarButtonItem?.isHidden = false
             showPlayer = true
             vmPlayerParse()
         default:
@@ -144,6 +148,21 @@ extension ListVC {
         print("stop")
         activityIndicator.stopAnimating()
         activityIndicator.hidesWhenStopped = true
+    }
+    
+}
+
+extension ListVC {
+    
+    func setRightbarButton(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle.fill"), style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem?.isHidden = true
+        
+    }
+    
+    @objc func addTapped(){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "agetable") as! AgeTableVC
+        presentPanModal(vc)
     }
     
 }

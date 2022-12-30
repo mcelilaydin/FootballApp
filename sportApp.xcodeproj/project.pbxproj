@@ -15,6 +15,7 @@
 		4C943AA2295B2E4700B8EABB /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C943AA1295B2E4700B8EABB /* ListVC.swift */; };
 		4C943AA5295BC64700B8EABB /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 4C943AA4295BC64700B8EABB /* PanModal */; };
 		4C943AB4295CC9C500B8EABB /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C943AB3295CC9C500B8EABB /* PlayerVC.swift */; };
+		4C943B1A295E008000B8EABB /* AgeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C943B19295E008000B8EABB /* AgeTableVC.swift */; };
 		4C9734DD294BD49A00A01B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9734DC294BD49A00A01B24 /* AppDelegate.swift */; };
 		4C9734DF294BD49A00A01B24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9734DE294BD49A00A01B24 /* SceneDelegate.swift */; };
 		4C9734E1294BD49A00A01B24 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9734E0294BD49A00A01B24 /* SplashVC.swift */; };
@@ -47,6 +48,7 @@
 		4C943A9F295B2E3400B8EABB /* ListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVM.swift; sourceTree = "<group>"; };
 		4C943AA1295B2E4700B8EABB /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		4C943AB3295CC9C500B8EABB /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
+		4C943B19295E008000B8EABB /* AgeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTableVC.swift; sourceTree = "<group>"; };
 		4C9734D9294BD49A00A01B24 /* sportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9734DC294BD49A00A01B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9734DE294BD49A00A01B24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,11 +90,20 @@
 		4C943A9E295B2E2800B8EABB /* List */ = {
 			isa = PBXGroup;
 			children = (
+				4C943B18295E007300B8EABB /* Age */,
 				4C97353029549CAB00A01B24 /* PlayerCell */,
 				4C943A9F295B2E3400B8EABB /* ListVM.swift */,
 				4C943AA1295B2E4700B8EABB /* ListVC.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		4C943B18295E007300B8EABB /* Age */ = {
+			isa = PBXGroup;
+			children = (
+				4C943B19295E008000B8EABB /* AgeTableVC.swift */,
+			);
+			path = Age;
 			sourceTree = "<group>";
 		};
 		4C9734D0294BD49A00A01B24 = {
@@ -332,6 +343,7 @@
 			files = (
 				4C6F333D29561A3100C8C516 /* UIView+Extensions.swift in Sources */,
 				4C97350B294BEC9F00A01B24 /* Teams.swift in Sources */,
+				4C943B1A295E008000B8EABB /* AgeTableVC.swift in Sources */,
 				4C9734E1294BD49A00A01B24 /* SplashVC.swift in Sources */,
 				4C6F33412956231000C8C516 /* OnboardingCollectionViewCell.swift in Sources */,
 				4C973511294E100000A01B24 /* CountryMenuVC.swift in Sources */,

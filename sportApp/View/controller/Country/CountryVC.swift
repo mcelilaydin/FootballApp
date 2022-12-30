@@ -30,7 +30,7 @@ class CountryVC: UIViewController {
     
     @IBAction func continueClicked(_ sender: Any) {
         if countryButtonTitle == "Country Name" {
-            DuplicateFuncs.alertMessage(title: "Error", message: "Please Select Country", vc: self)
+            DuplicateFuncs.alertMessage(title: "Error", message: "Please click world And select country.", vc: self)
         }else {
 //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeVC
 //            vc?.selectedCountryId = countryId ?? 0

@@ -33,13 +33,14 @@ class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         collectionView.delegate = self
         collectionView.dataSource = self
         nextBtn.layer.opacity = 0.5
         slides = [
-            OnboardingSlide(title: "Avrupa Ülkeleri", description: "Avrupa ülkeleri listenelenir ve seçilir.", image:UIImage(named: "earth")!),
-            OnboardingSlide(title: "Ülkelerin Ligleri", description: "Ülkelerin sahip oldugu ligler sıralanır.", image:UIImage(named: "ball")!),
-            OnboardingSlide(title: "Ülkelin Yerli Oyuncuları ", description: "Ülkelerin yerli oyuncuları sıralanır ve detayları verilir", image:UIImage(named: "ball")!)
+            OnboardingSlide(title: "European Countries", description: "European countries are listed and sorted.", image:UIImage(named: "earth")!),
+            OnboardingSlide(title: "Leagues of Countries", description: "The leagues that countries have are ranked.", image:UIImage(named: "ball")!),
+            OnboardingSlide(title: "Domestic Players of the Country.", description: "The domestic players of the countries are ranked and the details of the players are given.", image:UIImage(named: "ball")!)
         ]
 
         // Do any additional setup after loading the view.
@@ -51,6 +52,7 @@ class OnboardingVC: UIViewController {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "country") as? CountryVC
             self.navigationController?.pushViewController(vc!, animated: true)
         }else {
+            DuplicateFuncs.alertMessage(title: "", message: "Please swipe to the right.", vc: self)
 //            currentPage += 1
 //            let indexPath = IndexPath(item: currentPage, section: 0)
 //            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
