@@ -34,17 +34,17 @@ class ListVM {
         
         let api = "https://app.sportdataapi.com/api/v1/soccer/teams?apikey=156160a0-7c83-11ed-81d1-9175154fc401&country_id=\(countryId)"
         
-        AF.request(api).response { response in
+        AF.request(api).response { [weak self] response in
             if let data = response.data {
                 do{
                     let result = try JSONDecoder().decode(Welcome.self,from: data)
-                    self.arrTeams = result.data
+                    self?.arrTeams = result.data
                     comp(result.data, nil)
-                    self.isLoading = false
+                    self?.isLoading = false
                 }catch {
                     print(error.localizedDescription)
                     comp(nil, error)
-                    self.isLoading = true
+                    self?.isLoading = true
                 }
             }
         }
@@ -55,17 +55,17 @@ class ListVM {
         
         let api = "https://app.sportdataapi.com/api/v1/soccer/players?apikey=156160a0-7c83-11ed-81d1-9175154fc401&country_id=\(countryId)&min_age=\(minAge)"
         
-        AF.request(api).response { response in
+        AF.request(api).response { [weak self] response in
             if let data = response.data {
                 do{
                     let result = try JSONDecoder().decode(Players.self,from: data)
-                    self.arrPlayers = result.data
+                    self?.arrPlayers = result.data
                     comp(result.data, nil)
-                    self.isLoading = false
+                    self?.isLoading = false
                 }catch {
                     print(error.localizedDescription)
                     comp(nil, error)
-                    self.isLoading = true
+                    self?.isLoading = true
                 }
             }
         }
