@@ -26,10 +26,6 @@ class ListVM {
     
     func parse(countryId:Int,comp: @escaping ([Team]?,Error?)->()){
         
-//        static var header: HTTPHeaders = [
-//            "apikey": "156160a0-7c83-11ed-81d1-9175154fc401"
-//        ]
-        
         //120 -Süperlig
         
         let api = "https://app.sportdataapi.com/api/v1/soccer/teams?apikey=156160a0-7c83-11ed-81d1-9175154fc401&country_id=\(countryId)"

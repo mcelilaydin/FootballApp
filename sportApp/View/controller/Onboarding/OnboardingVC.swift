@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: ÇÖZ - Next Button tıklandıgında scrollama yapmıyor.
 
 class OnboardingVC: UIViewController {
     
@@ -40,7 +39,7 @@ class OnboardingVC: UIViewController {
         slides = [
             OnboardingSlide(title: "European Countries", description: "European countries are listed and sorted.", image:UIImage(named: "earth")!),
             OnboardingSlide(title: "Leagues of Countries", description: "The leagues that countries have are ranked.", image:UIImage(named: "ball")!),
-            OnboardingSlide(title: "Domestic Players of the Country.", description: "The domestic players of the countries are ranked and the details of the players are given.", image:UIImage(named: "ball")!)
+            OnboardingSlide(title: "Domestic Players of the Country.", description: "The players are ranked and the details of the players are given.", image:UIImage(named: "ball")!)
         ]
 
         // Do any additional setup after loading the view.
@@ -53,9 +52,6 @@ class OnboardingVC: UIViewController {
             self.navigationController?.pushViewController(vc!, animated: true)
         }else {
             DuplicateFuncs.alertMessage(title: "", message: "Please swipe to the right.", vc: self)
-//            currentPage += 1
-//            let indexPath = IndexPath(item: currentPage, section: 0)
-//            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
 }
