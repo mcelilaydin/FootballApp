@@ -8,6 +8,7 @@
 - Onboarding
 - MVVM Design Pattern
 - UITableView
+- UISegmentedControl
 - Custom TableView Cell
 - SDWebImage
 - Alamofire
